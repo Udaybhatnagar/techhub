@@ -35,12 +35,14 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Action Button */}
+        {/* WhatsApp Action Button */}
         <div className="flex items-center gap-6">
           <motion.a 
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            href="tel:+918527657955" 
+            href="https://wa.me/919258492383?text=Hello%20TechHub%20Technology,%20I%20am%20interested%20in%20your%20services"
+            target="_blank"
+            rel="noopener noreferrer"
             className="relative overflow-hidden px-7 py-3 rounded-2xl bg-slate-900 text-white flex items-center gap-3 shadow-xl shadow-slate-200 group"
           >
             <div className="absolute inset-0 w-1/2 h-full bg-white/10 -skew-x-[45deg] -translate-x-full group-hover:translate-x-[250%] transition-transform duration-1000"></div>
@@ -48,6 +50,7 @@ const Navbar = () => {
             <div className="w-6 h-6 rounded-lg bg-white/10 flex items-center justify-center">
               <Phone size={12} className="text-cyan-400 fill-cyan-400" />
             </div>
+
             <span className="font-bold text-[11px] uppercase tracking-widest">
               Consult Now
             </span>

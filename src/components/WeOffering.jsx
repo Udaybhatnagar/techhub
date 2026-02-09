@@ -1,42 +1,76 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Globe, Smartphone, Layout, BarChart, 
-  Search, Star, Palette, ArrowRight, ChevronRight 
+  Globe, Smartphone, Megaphone, Palette, BrainCircuit, 
+  BarChart3, Database, Network, ArrowRight, ChevronRight 
 } from 'lucide-react';
 
 const WeOffering = () => {
   const offerings = [
-    { title: "Website Development", icon: <Globe />, color: "text-cyan-600", bg: "bg-cyan-50", glow: "shadow-cyan-100", desc: "High-performance, SEO-ready web applications." },
-    { title: "iOS Development", icon: <Smartphone />, color: "text-blue-600", bg: "bg-blue-50", glow: "shadow-blue-100", desc: "Premium native apps for Apple's ecosystem." },
-    { title: "Android Development", icon: <Smartphone />, color: "text-indigo-600", bg: "bg-indigo-50", glow: "shadow-indigo-100", desc: "Scalable and robust Android solutions." },
-    { title: "SMO Services", icon: <BarChart />, color: "text-purple-600", bg: "bg-purple-50", glow: "shadow-purple-100", desc: "Strategic social media optimization for brands." },
-    { title: "Google Ads (PPC)", icon: <Search />, color: "text-orange-600", bg: "bg-orange-50", glow: "shadow-orange-100", desc: "High-conversion paid search campaigns." },
-    { title: "Google Review Mgmt", icon: <Star />, color: "text-yellow-600", bg: "bg-yellow-50", glow: "shadow-yellow-100", desc: "Reputation management and trust building." },
-    { title: "Graphic Design", icon: <Palette />, color: "text-pink-600", bg: "bg-pink-50", glow: "shadow-pink-100", desc: "Visual storytelling and brand identity." },
-    { title: "Custom UI/UX", icon: <Layout />, color: "text-emerald-600", bg: "bg-emerald-50", glow: "shadow-emerald-100", desc: "User-centric designs that drive engagement." }
+    { 
+      title: "Web Development", 
+      icon: <Globe />, 
+      color: "text-cyan-600", 
+      bg: "bg-cyan-50", 
+      desc: "Modern, scalable and SEO-friendly websites and web apps." 
+    },
+    { 
+      title: "Mobile App Development", 
+      icon: <Smartphone />, 
+      color: "text-blue-600", 
+      bg: "bg-blue-50", 
+      desc: "High-performance Android & iOS applications." 
+    },
+    { 
+      title: "Digital Marketing", 
+      icon: <Megaphone />, 
+      color: "text-purple-600", 
+      bg: "bg-purple-50", 
+      desc: "SEO, PPC and social media marketing strategies." 
+    },
+    { 
+      title: "Graphics Design", 
+      icon: <Palette />, 
+      color: "text-pink-600", 
+      bg: "bg-pink-50", 
+      desc: "Creative branding, UI design and visual identity solutions." 
+    },
+    { 
+      title: "AI Applications", 
+      icon: <BrainCircuit />, 
+      color: "text-indigo-600", 
+      bg: "bg-indigo-50", 
+      desc: "Smart automation and AI-powered business solutions." 
+    },
+    { 
+      title: "Business Intelligence", 
+      icon: <BarChart3 />, 
+      color: "text-emerald-600", 
+      bg: "bg-emerald-50", 
+      desc: "Data-driven dashboards and analytics for better decisions." 
+    },
+    { 
+      title: "CRM | ERP | LMS", 
+      icon: <Network />, 
+      color: "text-orange-600", 
+      bg: "bg-orange-50", 
+      desc: "Enterprise management systems to streamline operations." 
+    },
+    { 
+      title: "Data Analytics", 
+      icon: <Database />, 
+      color: "text-yellow-600", 
+      bg: "bg-yellow-50", 
+      desc: "Transform raw data into actionable insights." 
+    }
   ];
 
   return (
     <section id="offering" className="py-32 px-6 bg-[#fcfdfe] relative overflow-hidden">
-      {/* Abstract Background Accents */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <div className="absolute top-[-10%] right-[-5%] w-[30%] h-[40%] bg-indigo-50/50 blur-[120px] rounded-full" />
-      </div>
-
       <div className="max-w-7xl mx-auto relative z-10">
         
-        {/* Header Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 gap-8">
           <div className="max-w-2xl">
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              className="text-cyan-600 font-black tracking-[0.4em] text-[10px] uppercase mb-4 flex items-center gap-3"
-            >
-              <span className="w-10 h-[2px] bg-cyan-500"></span>
-              Expertise
-            </motion.div>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -55,7 +89,6 @@ const WeOffering = () => {
           </motion.button>
         </div>
 
-        {/* Dynamic Bento Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {offerings.map((item, index) => (
             <motion.div
@@ -67,7 +100,6 @@ const WeOffering = () => {
               whileHover={{ y: -10 }}
               className="group relative p-10 rounded-[2.5rem] bg-white border border-slate-100 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.08)] transition-all duration-500 flex flex-col h-full"
             >
-              {/* Icon Container */}
               <div className={`w-16 h-16 rounded-2xl ${item.bg} ${item.color} flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500 shadow-sm`}>
                 {React.cloneElement(item.icon, { size: 28, strokeWidth: 2.5 })}
               </div>
@@ -80,7 +112,6 @@ const WeOffering = () => {
                 {item.desc}
               </p>
 
-              {/* Interaction Link */}
               <div className="mt-auto flex items-center justify-between">
                 <span className="text-[10px] font-black uppercase tracking-widest text-slate-300 group-hover:text-slate-900 transition-colors">
                   Learn More
@@ -89,9 +120,6 @@ const WeOffering = () => {
                   <ChevronRight size={18} />
                 </div>
               </div>
-
-              {/* Subtle hover glow accent */}
-              <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-[60%] h-[2px] ${item.bg.replace('bg-', 'bg-')} opacity-0 group-hover:opacity-100 transition-opacity`} />
             </motion.div>
           ))}
         </div>
