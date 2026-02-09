@@ -13,16 +13,15 @@ import TeamSection from "../components/TeamSection.jsx";
 const Home = () => {
   return (
     <>
-      <AdvancedCursor/>
+      <AdvancedCursor />
       <Navbar />
       <Hero />
-      <Services />
+      <WeOffering />
       <About />
-      <TeamSection/>
-      <CaseStudiesSlider/>
-      <WeOffering/>
-      <BlogSection/>
-      <Testimonials/>
+      <Services />
+      <CaseStudiesSlider />
+      <BlogSection />
+      <Testimonials />
       <Footer />
     </>
   );
